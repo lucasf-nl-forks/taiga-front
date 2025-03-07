@@ -24,7 +24,8 @@ RUN set -eux; \
     apk update; \
     apk add --no-cache --virtual /.build-deps \
        subversion python3 optipng zlib zlib-dev libc6-compat git; \
-    apk add bash;
+    apk add bash; \
+    chmod +x /docker-entrypoint.d/30_config_env_subst.sh;
 
 COPY . /taiga
 WORKDIR /taiga
@@ -32,5 +33,6 @@ WORKDIR /taiga
 RUN npm i && npm i optipng-bin && npm rebuild node-sass && npx gulp deploy
 
 RUN mkdir /taiga/dist/plugins; \
+    mv /conf.json.template taiga/dist/; \
     apk del --no-cache /.build-deps; \
     mv /taiga/dist/* /usr/share/nginx/html;
