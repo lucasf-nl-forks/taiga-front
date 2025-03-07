@@ -23,7 +23,7 @@ COPY docker/config_env_subst.sh /docker-entrypoint.d/30_config_env_subst.sh
 RUN set -eux; \
     apk update; \
     apk add --no-cache --virtual /.build-deps \
-       subversion python3 optipng zlib zlib-dev libc6-compat; \
+       subversion python3 optipng zlib zlib-dev libc6-compat git; \
     apk add bash;
 
 COPY . /taiga
