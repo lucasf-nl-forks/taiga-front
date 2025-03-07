@@ -33,6 +33,6 @@ WORKDIR /taiga
 RUN npm i && npm i optipng-bin && npm rebuild node-sass && npx gulp deploy
 
 RUN mkdir /taiga/dist/plugins; \
-    mv /conf.json.template taiga/dist/; \
+    mv /conf.json.template /taiga/dist/; \
     apk del --no-cache /.build-deps; \
     mv /taiga/dist/* /usr/share/nginx/html;
