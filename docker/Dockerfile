@@ -21,7 +21,7 @@ RUN set -eux; \
 COPY . /taiga
 WORKDIR /taiga
 
-RUN npm ci && npx gulp deploy
+RUN npm i && npx gulp deploy
 
 RUN mkdir /taiga/dist/plugins; \
     apk del --no-cache /.build-deps; \
