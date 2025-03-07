@@ -442,6 +442,19 @@ tg-card[type='task'].folded-dragging {
             }
         }
     }
+    .us-tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: .5rem;
+
+        .tag {
+            align-self: flex-end;
+            margin-bottom: .5rem;
+            margin-right: .5rem;
+            padding: .2rem .5rem;
+        }
+    }
     .points-value {
         @include font-size(xsmall);
         align-items: center;

@@ -123,6 +123,14 @@ div.taskboard-table(
                                     ng-style="{'color': usStatusById[us.status]['color']}"
                                     ng-bind="usStatusById[us.status]['name']")
 
+
+                            div.us-tags
+                                .tag(
+                                    ng-attr-title="{{tag[0]}}"
+                                    ng-repeat="tag in us.tags"
+                                    ng-style="{background: tag[1]}"
+                                ) {{tag[0]}}
+
                             .add-new-task
                                 include ../components/addnewtask
 
