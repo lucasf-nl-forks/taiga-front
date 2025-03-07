@@ -22,6 +22,14 @@
         obj-type="task"
         ng-if="task.due_date"
     )
+
+    div.task-tags
+        .tag(
+            ng-attr-title="{{tag[0]}}"
+            ng-repeat="tag in task.tags"
+            ng-style="{background: tag[1]}"
+        ) {{tag[0]}}
+
 .task-settings
     <% if(perms.modify_task) { %>
     a.edit-task(

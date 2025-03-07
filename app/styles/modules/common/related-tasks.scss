@@ -96,6 +96,7 @@
         border-left: 10px solid $primary-light;
     }
     .task-name {
+        align-items: center;
         display: flex;
         margin-right: 1rem;
         .task-name-subject {
@@ -117,6 +118,17 @@
             width: 100%;
             span {
                 animation: loading .5s linear, spin 1s linear infinite;
+            }
+        }
+
+        .task-tags {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .tag {
+                margin-left: .5rem;
             }
         }
     }
