@@ -17,9 +17,10 @@ class RelatedUserstoryRowController
     ]
 
     constructor: (@avatarService, @translate, @confirm, @rs) ->
-        tags = @.userstory.get("tags")
-        if tags != undefined
-            @.tags = tags.toJS()
+        if @.userstory != undefined
+            tags = @.userstory.get("tags")
+            if tags != undefined
+                @.tags = tags.toJS()
 
     setAvatarData: () ->
         member = @.userstory.get('assigned_to_extra_info')
