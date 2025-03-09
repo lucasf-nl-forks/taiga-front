@@ -13,7 +13,10 @@ class StoryRowController
 
     constructor: () ->
         @._calculateProgressBar()
-        @.tags = @.story.get('tags').toJS()
+
+        tags = @.story.get("tags")
+        if tags != undefined
+            @.tags = tags.toJS()
 
     _calculateProgressBar: () ->
         if @.story.get('is_closed') == true

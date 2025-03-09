@@ -22,7 +22,10 @@ class EpicRowController
         # NOTE: We use project as no inmutable object to make
         #       the code compatible with the old code
         @.project = @projectService.project.toJS()
-        @.tags = @.epic.get("tags").toJS()
+
+        tags = @.epic.get("tags")
+        if tags != undefined
+            @.tags = tags.toJS()
 
         @._calculateProgressBar()
 
