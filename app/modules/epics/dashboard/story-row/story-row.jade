@@ -23,6 +23,11 @@
                 format="pill"
                 epics="vm.story.get('epics')"
             )
+            .tag(
+                ng-attr-title="{{tag[0]}}"
+                ng-repeat="tag in vm.tags"
+                ng-style="{background: tag[1]}"
+            ) {{tag[0]}}
     .project(
         ng-if="vm.options.project"
         tg-nav="project:project=vm.story.getIn(['project_extra_info', 'slug'])"

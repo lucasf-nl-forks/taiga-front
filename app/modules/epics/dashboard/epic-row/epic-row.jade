@@ -31,7 +31,6 @@
         )
             span.ref(ng-bind-html="'#'+vm.epic.get('ref')")
             span.subject(ng-bind-html="vm.epic.get('subject') | emojify")
-        h2 {{ JSON.stringify(vm.epic) }}
         .tag(
             ng-attr-title="{{tag[0]}}"
             ng-repeat="tag in vm.tags"
