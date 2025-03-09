@@ -25,6 +25,11 @@ tg-svg.icon-drag(
             ng-if="vm.userstory.get('epics')"
             epics="vm.userstory.get('epics')"
         )
+        .tag(
+            ng-attr-title="{{tag[0]}}"
+            ng-repeat="tag in vm.tags"
+            ng-style="{background: tag[1]}"
+        ) {{tag[0]}}
 
 .userstory-settings
     a.delete-userstory.e2e-delete-userstory(
